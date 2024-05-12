@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import AstroIcon from "./icons/AstroIcon.astro";
+import TailwindIcon from "./icons/Tailwind.astro";
+
+const tags = {
+  astro: {
+    name: "Astro",
+    class: "bg-orange-500/40 text white",
+    icon: AstroIcon,
+  },
+  tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text white",
+    icon: TailwindIcon,
+  },
+};
+
+const projects = [
+  {
+    title:
+      "UnidenStore - Una página web para la venta de artículos universitarios",
+    description:
+      "Una página web para una empresa que vende artículos universitarios cuenta con la información de la empresa así como secciones de preguntas frecuentes, modales y formularios de contacto.",
+    link: "https://unidenstore.com",
+    github: "#",
+    image: "/public/projects/uniden.webp",
+    tags: [tags.astro, tags.tailwind],
+  }
+];
+---
+
+{
+  projects.map(({ title, description, image, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-purple-500 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-lg shadow-white/10"
+        src={image}
+        alt={`Imagen del Proyecto`}
+      />
+    </article>
+  ))
+}
