@@ -4,6 +4,7 @@ import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
 ---
 
 <div class="max-w-xl">
@@ -28,7 +29,7 @@ import SocialPill from "../components/SocialPill.astro";
     Hola, soy ArnexDev
   </h1>
   <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-violet-500 [&>strong]:text-violet-800 [&>strong]:font-semibold dark:text-gray-300"
   >
     <strong
       >Desarrollador Web y Estudiante de Ingeniería de Software.</strong
@@ -36,12 +37,16 @@ import SocialPill from "../components/SocialPill.astro";
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:mrankex.dev@gmail.com">
-      <MailIcon class="size-4" />
+      <MailIcon class="size-5" />
       Contáctame
     </SocialPill>
     <SocialPill href="https://linkedin.com/in/">
-      <LinkedInIcon class="size-4" />
+      <LinkedInIcon class="size-5" />
       LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/Arnex-Dev">
+      <GitHubIcon class="size-5" />
+      GitHub
     </SocialPill>
   </nav>
 </div>
