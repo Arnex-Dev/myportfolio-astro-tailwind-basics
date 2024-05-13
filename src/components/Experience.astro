@@ -1,29 +1,29 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro";
-
-const experience = [
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
   {
-    date: "Mayo 2024",
-    title: "Arnex Portfolio",
+    date: "date",
+    title: "lorem",
+    company: "lorem",
     description:
-      "Mi portafolio personal desarrollado utilizando Astro y Tailwind CSS",
-    link: "#",
+      "lorem",
+    link: "",
   },
   {
-    date: "Mayo 2024",
-    title: "Arnex Portfolio",
+    date: "date",
+    title: "lorem",
+    company: "lorem",
     description:
-      "Mi portafolio personal desarrollado utilizando Astro y Tailwind CSS",
-    link: "#",
-  }
-];
+      "lorem",
+  },
+]
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+<ol class="relative mt-16">
   {
-    experience.map((experience) => (
-      <li class="mb-10 ms-4">
-        <ExperienceItem {...experience} />
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
       </li>
     ))
   }
