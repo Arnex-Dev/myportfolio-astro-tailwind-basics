@@ -25,13 +25,7 @@ const { title, description } = Astro.props;
   </head>
 
   <!-- Caution: I removed the possibility of side scrolling in the body. -->
-  <body class="overflow-x-hidden bg-neutral-950 relative text-black dark:text-white">
-    <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 transition dark:bg-black
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(127,17,224,0.3),rgba(255,255,255,0))]"
-    >
-    </div>
+  <body class="overflow-x-hidden bg-neutral-300 dark:bg-neutral-950 relative text-black dark:text-white">
     <Header />
     <slot />
     <Footer />
@@ -51,6 +45,7 @@ const { title, description } = Astro.props;
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
+        background-image: url(/public/bg.svg);
       }
 
       @media (prefers-reduced-motion: reduce) {

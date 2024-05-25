@@ -1,32 +1,44 @@
 ---
-import LinkInline from "./LinkInline.astro"
+import LinkInline from "./LinkInline.astro";
 
 interface Props {
-  title: string
-  company: string
-  description: string
-  link?: string
-  date: string
+  title: string;
+  company: string;
+  description: string;
+  link?: string;
+  date: string;
+  datetime: string;
+  badge: string;
 }
 
-const { title, company, description, link, date } = Astro.props
+const { title, company, description, link, date, datetime, badge } =
+  Astro.props;
 ---
 
-<div
+<!--<div
   class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
 >
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
-      <span class="text-violet-800 dark:text-violet-500 -left-[42px] absolute rounded-full text-5xl"
+      <span
+        class="text-violet-800 dark:text-violet-500 -left-[42px] absolute rounded-full text-5xl"
         >&bull;</span
       >
 
-      <h3 class="text-xl font-semibold text-violet-800 dark:text-violet-500">{title}</h3>
-      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
+      <h3 class="text-xl font-semibold text-violet-800 dark:text-violet-500">
+        {title}
+      </h3>
+      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">
+        {company}
+      </h4>
+      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"
+        >{date}</time
+      >
     </div>
   </div>
-  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
+  <div
+    class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"
+  >
     {description}
     {
       link && (
@@ -52,4 +64,41 @@ const { title, company, description, link, date } = Astro.props
       )
     }
   </div>
+</div>-->
+<div>
+  <span
+    class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-neutral-950 dark:bg-blue-900"
+  >
+    <svg
+      class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+      ></path>
+    </svg>
+  </span>
+  <h3
+    class="flex items-center mb-1 text-xl font-semibold text-violet-800 dark:text-violet-500"
+  >
+    {title}<span
+      class="bg-blue-100 text-blue-800  text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300 ms-3"
+      >{badge}</span
+    >
+  </h3>
+  <h4 class="font-semibold text-lg mb-2 text-gray-600 dark:text-white">
+    {company}
+  </h4>
+  <time
+    datetime={date}
+    class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+    >{date}</time
+  >
+  <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+    {description}
+  </p>
+  {link && <LinkInline href={link}>Saber más </LinkInline>}
 </div>

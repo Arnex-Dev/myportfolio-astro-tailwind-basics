@@ -2,20 +2,32 @@
 import ExperienceItem from "./ExperienceItem.astro"
 const EXPERIENCIE = [
   {
-    date: "date",
-    title: "lorem",
-    company: "lorem",
+    datetime: "2024-01-01",
+    date: "01-01-2024",
+    title: "Programador de interfaces de usuario - UX/UI",
+    company: "SEED",
     description:
-      "lorem",
+      "Encargado de desarrollar la experiencia del usuario en el plataforma y su accesibilidad",
     link: "",
+    badge: "Más reciente"
+  },
+  {
+    datetime: "2024-01-01",
+    date: "01-01-2024",
+    title: "Programador de interfaces de usuario - UX/UI",
+    company: "Google",
+    description:
+      "Encargado de desarrollar la experiencia del usuario en el plataforma y su accesibilidad",
+    link: "https://google.com",
+    badge: "Más reciente"
   }
 ]
 ---
 
-<ol class="relative mt-16">
+<ol class="relative mt-16 border-s border-gray-200 dark:border-gray-700">
   {
     EXPERIENCIE.map((experiencie) => (
-      <li class="">
+      <li class="mb-10 ms-6">
         <ExperienceItem {...experiencie} />
       </li>
     ))
